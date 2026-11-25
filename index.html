@@ -50,13 +50,17 @@ defer></script>
 
 <body>
  <header class="site-header">
-  <h1>Endalk Woldeab Woldeyesus</h1>
+  <div class="header-top">
+    <h1>Endalk Woldeab</h1>
+    <button type="button" id="themeBtn" aria-label="Switch to dark mode" aria-pressed="false">
+      <span id="themeIcon" aria-hidden="true">&#9790;</span>
+    </button>
+  </div>
   <nav class="site-nav" aria-label="Primary navigation" style="color: gray;">  <!-- Inline style for demonstration; consider moving to CSS file -->
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
-    <button type="button" id="themeBtn" aria-pressed="false">Dark mode</button>
   </nav>
 </header>
 
