@@ -1,0 +1,256 @@
+/* External CSS: main stylesheet linked from index.html */
+
+/* box-sizing at the very top */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Variables: at least three colors */
+:root {
+  --brand: #ea4b2c;
+  --bg: #ffffff;
+  --surface: #f7f7f7;
+  --text: #1a1a1a;
+  --muted: #555555;
+  --border: #dddddd;
+}
+
+body.dark {
+  --brand: #ff8268;
+  --bg: #15191e;
+  --surface: #20262d;
+  --text: #edf1f5;
+  --muted: #b6c0ca;
+  --border: #39434d;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--bg);
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* Flexbox on header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  border-bottom: 1px solid var(--border);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+main {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.5rem 0;
+}
+
+/* The box model on sections, cards, and aside */
+section,
+aside {
+  padding: 24px;
+  border: 1px solid var(--border);
+  margin: 0 auto 1.5rem;
+  background-color: var(--surface);
+  border-radius: 6px;
+}
+
+/* Grid on the projects section */
+#projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+#projects > h2,
+#projects > h3,
+#projects > audio,
+#projects > iframe {
+  grid-column: 1 / -1;
+}
+
+#projects > iframe {
+  height: 640px;
+  margin: 1rem;
+}
+
+article {
+  padding: 24px;
+  border: 1px solid var(--border);
+  margin: 0 auto;
+  background-color: var(--bg);
+  width: 100%;
+}
+
+img,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+figure {
+  margin: 1rem 0;
+}
+
+#about figure {
+  float: right;
+  width: 150px;
+  margin: 0 0 1rem 1rem;
+}
+
+#about {
+  display: flow-root;
+}
+
+#about figure img {
+  display: block;
+  width: 100%;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+caption {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 0.6rem;
+  text-align: left;
+}
+
+th {
+  background-color: var(--bg);
+}
+
+/* Form styling */
+fieldset {
+  border: 1px solid var(--border);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+legend {
+  font-weight: bold;
+  color: var(--brand);
+}
+
+label {
+  display: block;
+  margin-top: 0.75rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+  width: 50%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: inherit;
+}
+
+/* :focus on form inputs */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--brand);
+  outline-offset: 1px;
+}
+
+/* :hover + transition on links and buttons */
+a,
+button {
+  color: var(--brand);
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+a:hover,
+button:hover {
+  color: var(--text);
+  opacity: 0.85;
+}
+
+#themeBtn {
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: var(--surface);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: var(--brand);
+  color: var(--bg);
+  border: none;
+  padding: 0.65rem 1.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0.75rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+
+/* A phone layout: one column on phones */
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+
+  #about figure {
+    width: 120px;
+  }
+
+  #projects {
+    grid-template-columns: 1fr;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  select,
+  textarea {
+    width: 100%;
+  }
+}
